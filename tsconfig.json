@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "lib": ["es6", "es2015"],
+    "outDir": "lib",
+    "rootDir": "src",
+    "strict": true,
+    "types": ["node", "mocha"],
+    "typeRoots": ["./src/types"],
+    "esModuleInterop": true
+  }
+}

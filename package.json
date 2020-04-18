@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "start": "yarn build -w",
+    "build": "tsc -p .",
+    "clean": "rm -rf ./node_modules | rm -rf lib | yarn"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.11.1",
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1",
+    "ts-node": "^8.8.2",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/react-native": "^0.62.2",
+    "commander": "^5.0.0",
+    "glob": "^7.1.6",
+    "react-native": "^0.62.2",
+    "webfonts-generator": "^0.4.0"
+  },
+  "bin": "lib/bin/index.js"
+}
