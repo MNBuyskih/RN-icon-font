@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import {program} from "commander";
 import {Generator} from "..";
 
@@ -17,7 +19,7 @@ const generator = new Generator({
 generator.generate().then(() => {
   console.log(`Icon font and components was generated`);
   process.exit(0);
-}).catch(e => {
+}).catch((e: Error) => {
   console.error(e);
   process.exit(1);
 });

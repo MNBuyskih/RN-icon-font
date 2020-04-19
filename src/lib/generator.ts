@@ -7,10 +7,11 @@ import generator from "webfonts-generator";
 const asyncGlob = util.promisify(glob);
 const asyncGenerator = util.promisify(generator);
 const CSS_PARSE_REGEX = /-(.*):before.*\r?\n\s*content: "(.*)"/gm;
-const COMPONENT_TEMPLATE = `#{FONT_NAME}.#{ICON_NAME} = function ({style}) {
-  return <Text style={{...style, ...defaultStyle}}>#{GLYPH}</Text>;
-}`;
-const DEFINITION_TEMPLATE = `  export function #{ICON_NAME}(props: {style: TextStyle}): JSX.Element;`;
+const COMPONENT_TEMPLATE = `  #{ICON_NAME}({style}) {
+    const glyph = String.fromCharCode(parseInt("#{GLYPH}", 16));
+    return <Text style={{...style, ...defaultStyle}}>{glyph}</Text>;
+  },`;
+const DEFINITION_TEMPLATE = `  export function #{ICON_NAME}(props: {style?: TextStyle}): JSX.Element;`;
 
 export interface IGeneratorOptions {
   svg: string;
@@ -56,6 +57,7 @@ export class Generator {
   private async generateData(fontGenerator: generator.IResult): Promise<Record<string, string>> {
     const css = fontGenerator.generateCss();
     const map: Record<string, string> = {};
+
     css.replace(CSS_PARSE_REGEX, (match, name, code) => map[name] = code);
 
     return map;
@@ -63,23 +65,24 @@ export class Generator {
 
   private async generateComponents(maps: Record<string, string>): Promise<void> {
     const names = Object.keys(maps);
-    const filePath = path.resolve(this.outputPath, this.name + ".jsx");
+    const filePath = path.resolve(this.outputPath, this.name + ".js");
     const components = names.map(name => {
       return COMPONENT_TEMPLATE
         .replace("#{FONT_NAME}", this.name)
         .replace("#{ICON_NAME}", this.capitalize(name))
-        .replace("#{GLYPH}", maps[name])
+        .replace("#{GLYPH}", maps[name].replace('\\', '0x'))
         ;
     }).join("\n\n");
-    let content = `import React, {Text} from "react-native";
+    let content = `import React from "react";
+import {Text} from "react-native";
 
-export const ${this.name} = {};
 const defaultStyle = {
-  fontFamily: ${this.name},
+  fontFamily: "${this.name}",
 };
 
+export const ${this.name} = {
 ${components}
-`;
+}`;
 
     await fs.writeFile(filePath, content);
   }

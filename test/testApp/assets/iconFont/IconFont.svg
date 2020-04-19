@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="no"?> 
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <font id="IconFont" horiz-adv-x="24">
+    <font-face font-family="IconFont"
+      units-per-em="24" ascent="24"
+      descent="0" />
+    <missing-glyph horiz-adv-x="0" />
+    <glyph glyph-name="circle"
+      unicode="&#xF101;"
+      horiz-adv-x="24" d=" M12 20A8 8 0 1 0 4 12A8 8 0 0 0 12 20M12 24H12A12 12 0 0 1 0 12H0A12 12 0 0 1 12 0H12A12 12 0 0 1 24 12H24A12 12 0 0 1 12 24z" />
+    <glyph glyph-name="polygon"
+      unicode="&#xF102;"
+      horiz-adv-x="24" d=" M15.69 18.39L19.38 12L15.69 5.61H8.31L4.62 12L8.31 18.39H15.69M18 22.39H6L0 12L6 1.61H18L24 12L18 22.39z" />
+    <glyph glyph-name="rectangle"
+      unicode="&#xF103;"
+      horiz-adv-x="24" d=" M20 20V4H4V20H20M21 24H3A3 3 0 0 1 0 21V3A3 3 0 0 1 3 0H21A3 3 0 0 1 24 3V21A3 3 0 0 1 21 24z" />
+    <glyph glyph-name="star"
+      unicode="&#xF104;"
+      horiz-adv-x="24" d=" M12 14.5L12.11 14.25L13 12.34L15 12L15.27 11.95L15.06 11.77L13.51 10.35L13.79 8.27L13.79 8L13.55 8.13L11.72 9.13L9.83 8.22L9.58 8.1L9.63 8.37L10.06 10.43L8.69 11.95L8.5 12.15L8.77 12.15L10.86 12.38L11.86 14.23L12 14.5M12.31 23.5L8.31 16.12L0 15.24L5.8 9.18L4.09 1L11.64 4.64L18.92 0.48L17.8 8.77L24 14.4L15.75 15.9L12.3 23.54z" />
+  </font>
+</defs>
+</svg>

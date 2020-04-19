@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ES3",
     "module": "CommonJS",
     "lib": ["es6", "es2015"],
     "outDir": "lib",
@@ -8,6 +8,8 @@
     "strict": true,
     "types": ["node", "mocha"],
     "typeRoots": ["./src/types"],
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "alwaysStrict": false,
+    "noImplicitUseStrict": true
   }
 }

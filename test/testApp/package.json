@@ -7,7 +7,9 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "fonts": "rn-fonts -s \\\"assets/svg/**/*.svg\\\" -o \\\"assets/iconFont\\\" && cp -f android/app/src/main/assets/fonts/IconFont.ttf android/app/src/main/assets/fonts/IconFont.ttf",
+    "clean": "rm -rf node_modules && yarn"
   },
   "dependencies": {
     "react": "16.11.0",

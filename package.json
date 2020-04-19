@@ -1,4 +1,6 @@
 {
+  "version": "0.0.2",
+  "name": "rn-fonts",
   "scripts": {
     "start": "yarn build -w",
     "build": "tsc -p .",
