@@ -12,6 +12,19 @@
 3. Generate your fonts with `yarn fonts` or `npm run fonts`
 4. After first generation you must install generated font in your app. You can do it with any way you prefer
 
+### Usage
+
+After generation you can use icons like this:
+
+```jsx
+import {Icons} from "path/to/destination/MyPrettyFont"
+// ...
+
+<Icons.IconName style={{}} />
+```
+
+Where `IconName` is capitalized svg file name.
+
 ### Options
 
 ```
