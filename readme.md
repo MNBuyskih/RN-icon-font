@@ -17,10 +17,10 @@
 After generation you can use icons like this:
 
 ```jsx
-import {Icons} from "path/to/destination/MyPrettyFont"
+import {MyPrettyFont} from "path/to/destination/MyPrettyFont"
 // ...
 
-<Icons.IconName style={{}} />
+<MyPrettyFont.IconName style={{}} />
 ```
 
 Where `IconName` is capitalized svg file name.
