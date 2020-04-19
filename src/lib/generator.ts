@@ -8,10 +8,11 @@ const asyncGlob = util.promisify(glob);
 const asyncGenerator = util.promisify(generator);
 const CSS_PARSE_REGEX = /-(.*):before.*\r?\n\s*content: "(.*)"/gm;
 const COMPONENT_TEMPLATE = `  #{ICON_NAME}({style}) {
+    const style = props.style;
     const glyph = String.fromCharCode(parseInt("#{GLYPH}", 16));
-    return <Text style={{...style, ...defaultStyle}}>{glyph}</Text>;
+    return <Text {...props} style={{...style, ...defaultStyle}}>{glyph}</Text>;
   },`;
-const DEFINITION_TEMPLATE = `  export function #{ICON_NAME}(props: {style?: TextStyle}): JSX.Element;`;
+const DEFINITION_TEMPLATE = `  export function #{ICON_NAME}(props: TextProps): JSX.Element;`;
 
 export interface IGeneratorOptions {
   svg: string;
@@ -97,7 +98,7 @@ ${components}
         .replace("#{GLYPH}", maps[name])
         ;
     }).join("\n\n");
-    let content = `import {TextStyle} from "react-native";
+    let content = `import {TextProps} from "react-native";
 
 export namespace ${this.name} {
 ${components}

@@ -8,7 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "fonts": "rn-fonts -s \\\"assets/svg/**/*.svg\\\" -o \\\"assets/iconFont\\\" && cp -f assets/iconFont/IconFont.ttf android/app/src/main/assets/fonts/IconFont.ttf",
+    "fonts": "rn-fonts -s \"assets/svg/**/*.svg\" -o \"assets/iconFont\" && cp -f assets/iconFont/IconFont.ttf android/app/src/main/assets/fonts/IconFont.ttf",
     "clean": "rm -rf node_modules && yarn"
   },
   "dependencies": {
